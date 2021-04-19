@@ -2,7 +2,9 @@
 
 In order to run the application, you have to ensure you have the docker and docker-compose running https://docs.docker.com/get-docker/
 
-Build and run the app with:
+First of all, you need to create an `.env` file, you can do this by copying the `.env.development` file and renaming it. 
+
+Then build and run the app with:
 ```bigquery
 make up # this invokes docker-compose which installs the server and the database
 ```
