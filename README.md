@@ -15,6 +15,7 @@ The project contains three main parts:
 - **app.go** - runs the server and handles the requests
 - **counter.go** - Counter model, which takes over the db interaction and handles the counter operations
 
-Tests are currently only to run due to host issues inside of container:
+Tests are currently only to run due to host issues inside of container, so log in inside of the server containter and run the tests:
+1. `docker exec -it restapi_server_1 /bin/bash`
+2. ``make test``
 
-``make test``
