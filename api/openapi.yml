@@ -1,0 +1,59 @@
+swagger: '2.0'
+info:
+    description: This is a simple API
+    version: 1.0.0
+    title: Simple API for a CounterService
+    contact:
+        email: vpaskar@gmx.de
+
+
+paths:
+    /api/counter/increment:
+        put:
+            summary: increments the counter's value
+            produces:
+                - application/json
+            responses:
+                200:
+                    description: Counter succefully incremented
+
+    /api/counter/decrement:
+        put:
+            summary: decrements the counter's value
+            produces:
+                - application/json
+            responses:
+                200:
+                    description: Counter succefully decremented
+                400:
+                    description: Value of the counter cannot be lower than 0
+
+
+    /api/counter:
+        get:
+            summary: gets the counter's value
+            produces:
+                - application/json
+            responses:
+                200:
+                    description: item created
+
+definitions:
+    Counter:
+        type: object
+        required:
+            - value
+        properties:
+            value:
+                type: integer
+                example: 99
+
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+basePath: /Handkock/SampleRestAPI/1.0.0
+# schemes:
+#  - http
+# Added by API Auto Mocking Plugin
+schemes:
+    - https
+    - http

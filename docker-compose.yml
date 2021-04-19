@@ -1,0 +1,29 @@
+version: "3"
+services:
+  server:
+    image: golang:latest
+    volumes:
+      - .:/go/src/app
+    working_dir: /go/src/app
+    command: make run
+    env_file:
+      .env
+    ports:
+      - "${APP_PORT}:${APP_PORT}"
+    tty: true
+    restart: always
+
+  db:
+    build: ./db
+    restart: always
+    env_file:
+      .env
+    expose:
+      - ${DB_PORT}
+    ports:
+      - "${DB_PORT}:${DB_PORT}"
+    volumes:
+      - ./db/docker-entrypoint-initdb.d/1-init.sql:/docker-entrypoint-initdb.d/1-init.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
