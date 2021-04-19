@@ -1,6 +1,6 @@
 ### This is Sample RESTful API to manipulate a simple counter
 
-In order to run the application, you have to install the docker and docker-compose running https://docs.docker.com/get-docker/
+In order to run the application, you have to ensure you have the docker and docker-compose running https://docs.docker.com/get-docker/
 
 Build and run the app with:
 ```bigquery
@@ -12,3 +12,7 @@ The project contains three main parts:
 - **main.go** - main entrypoint to invoke the server, init the counter and clean termination
 - **app.go** - runs the server and handles the requests
 - **counter.go** - Counter model, which takes over the db interaction and handles the counter operations
+
+Tests are currently only to run due to host issues inside of container:
+
+``make test``
