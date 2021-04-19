@@ -1,4 +1,4 @@
-module github.com/Handkock/RestAPI
+module github.com/Handkock/SampleRestAPI
 
 go 1.16
 
